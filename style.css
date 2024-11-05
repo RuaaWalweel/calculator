@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e1e2f, #283149);
+    color: #f4f4f9;
+    padding: 20px; /* For smaller screen padding */
+  }
+  
+  .calculator {
+    width: 100%;
+    max-width: 320px; /* Ensures it doesn’t exceed this width on larger screens */
+    background: rgba(255, 255, 255, 0.15); /* Glass effect */
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .display {
+    background: rgba(0, 0, 0, 0.2);
+    color: #f4f4f9;
+    font-size: 2rem;
+    text-align: right;
+    padding: 20px;
+    height: 60px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px; /* Adds space between buttons */
+    padding: 10px; /* Adds padding around buttons */
+  }
+  
+  button {
+    font-size: 1.5rem;
+    padding: 20px;
+    background: rgba(48, 71, 94, 0.8);
+    color: #f4f4f9;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    margin: 5px;
+  }
+  
+  button:hover {
+    background: rgba(240, 84, 84, 0.8);
+    transform: scale(1.05);
+  }
+  
+  button:active {
+    transform: scale(0.95);
+    background: rgba(240, 84, 84, 1);
+  }
+  
+  button.zero {
+    grid-column: span 2;
+  }
+  
+  button:nth-child(4n) {
+    background-color: rgba(240, 84, 84, 0.8);
+  }
+  
+  button:nth-child(4n):hover {
+    background-color: rgba(250, 128, 114, 0.9);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 500px) {
+    .display {
+      font-size: 1.5rem; /* Smaller font for display */
+      padding: 15px; /* Adjust padding for smaller screens */
+    }
+  
+    button {
+      font-size: 1.2rem; /* Smaller font for buttons */
+      padding: 15px; /* Reduce padding on buttons for smaller screens */
+    }
+  }
+  
+  @media (max-width: 350px) {
+    .display {
+      font-size: 1.2rem; /* Further reduce display font size */
+      padding: 10px;
+    }
+  
+    button {
+      font-size: 1rem; /* Smaller font for ultra-small screens */
+      padding: 10px; /* Adjust padding for better fit */
+    }
+  
+    .calculator {
+      border-radius: 10px; /* Slightly smaller border radius on small screens */
+    }
+  }
+  
